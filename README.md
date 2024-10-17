@@ -31,8 +31,6 @@ For this project, I will Analyze the dataset provided by AtliǪ Hardware and wil
 
 ![image](supplychain_table.PNG)
 
-![image](conclusion.PNG)
-
 
 
 
