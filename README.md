@@ -1,80 +1,40 @@
-# Finance and Supply Chain Analysis
+# SQL-Finance-and-Supply-Chain-Analytics
 
-This repository contains code for finance and supply chain analytics. The code is designed to perform various financial and sales analysis tasks. Below are the main components of the code and their functionalities:
+## Project Overview
+The company is facing performance issues as the size of Excel files has been increased. To solve the issue company has formed a team of data analysts who will be using MySQL to gain insights which are valuable for the company
 
-## Finance Analytics
+## Problem Statement
+For this project, I will Analyze the dataset provided by AtliǪ Hardware and will extract valuable insights related to sales, market, customer and supply chain forecasting.
 
-### A. Customer Codes for Croma India
+## Financial Analytics
+![image](croma_sales.PNG)
 
-The first SQL query retrieves customer codes for the Croma India market from the `dim_customer` table.
+![image](qurey_croma.PNG)
 
-### B. Sales Transaction Data for Croma India in Fiscal Year 2021
+![image](croma_table.PNG)
 
-The second SQL query retrieves all the sales transaction data from the `fact_sales_monthly` table for the customer (Croma: 90002002) in the fiscal year 2021.
+![image](yearly_report.PNG)
 
-### C. Creating a Function 'get_fiscal_year'
+![image](net_sales_region.PNG)
 
-A user-defined function named `get_fiscal_year` is created to get the fiscal year by passing a date.
+![image](top_5_customer.PNG)
 
-### D. Replacing the Function in the Query
+![image](top_5_market.PNG)
 
-The third SQL query replaces the function created in step C and retrieves sales transaction data using the new function.
-
-## Gross Sales Reports
-
-1. **Monthly Product Transactions**
-
-   Joins product information from the `dim_product` table with sales data from the `fact_sales_monthly` table for Croma India in fiscal year 2021.
-
-2. **Total Sales Amount**
-
-   Generates a monthly gross sales report for Croma India for all years, aggregating the sales data from the `fact_sales_monthly` and `fact_gross_price` tables.
-
-## Stored Procedures
-
-1. **get_monthly_gross_sales_for_customer**
-
-   Generates a monthly gross sales report for any customer by passing customer codes as input.
-
-2. **get_market_badge**
-
-   Retrieves the market badge (Gold or Silver) based on the total sold quantity for a given market and fiscal year.
-
-## Yearly Report for Croma India
-
-Generates a yearly report for Croma India, showing two columns:
-
-1. Fiscal Year
-2. Total Gross Sales amount in that year from Croma
+![image](top_5_product.PNG)
 
 ## Supply Chain Analytics
 
-### Creating `fact_act_est` Table
+![image](supply_chain.PNG)
 
-This part of the code creates a new `fact_act_est` table, which combines data from the `fact_sales_monthly` and `fact_forecast_monthly` tables.
+![image](query_supplychain.PNG)
 
-### Database Triggers
+![image](supplychain_table.PNG)
 
-Two triggers are created:
+![image](conclusion.PNG)
 
-1. **`fact_sales_monthly_AFTER_INSERT`**
 
-   Automatically inserts records into the `fact_act_est` table whenever an insertion occurs in the `fact_sales_monthly` table.
 
-2. **`fact_forecast_monthly_AFTER_INSERT`**
 
-   Automatically inserts records into the `fact_act_est` table whenever an insertion occurs in the `fact_forecast_monthly` table.
 
-### Events
 
-1. **`e_daily_log_purge`**
-
-   A daily event to delete logs that are more than 5 days old from the `session_logs` table.
-
-### Temporary Tables and Forecast Accuracy Report
-
-This section demonstrates the use of temporary tables and stored procedures to generate a forecast accuracy report for a given fiscal year.
-
-### User Accounts and Privileges
-
-This section deals with user management and grants certain privileges to a new user 'thor' for the 'gdb041' database.
